@@ -1,0 +1,31 @@
+# Ports
+#   5001 - abulmisk
+#   5002 - viktor
+#   5003 - cah
+#   5004 - dizzy
+#   5005
+#   5006
+#   5007
+#   5008
+#   5009
+
+version: '3'
+services:
+  nginxpm:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+      - '3000:3000'             # Grafana
+      - '5001-5009:5001-5009'   # Flask apps
+      - '8086:8086'             # Influxdb
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+
+networks:
+  default:
+    external:
+      name: okr-network
