@@ -6,6 +6,6 @@ docker network create okr-network
 # Open external ports
 sudo ufw allow 80,81,443 proto tcp
 
-cd ~/paleiron/services/nginx-proxy-manager
+cd ~/extras/paleiron/services/nginx-proxy-manager
 docker-compose up -d
 ```
