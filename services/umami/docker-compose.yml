@@ -1,7 +1,7 @@
 version: '3'
 services:
   umami:
-    image: 'ghcr.io/umami-software/umami:mysql-latest'
+    image: 'ghcr.io/umami-software/umami:postgresql-latest'
     container_name: 'umami'
     ports:
       - '3001:3001'
