@@ -45,5 +45,5 @@ volumes:
 
 networks:
   default:
-    external:
-      name: okr-network
+    name: okr-network
+    external: true

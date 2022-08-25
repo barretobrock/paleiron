@@ -25,4 +25,8 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
 
+networks:
+  default:
+    name: okr-network
+    external: true
 
