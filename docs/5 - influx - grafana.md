@@ -5,10 +5,13 @@
 
 ### Installation
 ```bash
+# Create network
+docker create network okr-network
+
 # Add Env vars
 . ./secrets/influx-grafana-env.sh
 
-cd ~/paleiron/services/influx-grafana
+cd ~/extras/paleiron/services/influx-grafana
 docker-compose up -d
 ```
 ### Config

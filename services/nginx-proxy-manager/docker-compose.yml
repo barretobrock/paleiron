@@ -1,0 +1,28 @@
+# Ports
+#   comp -> dock    service
+#   5001 -> 5002    abulmisk
+#   5003 ->         viktor
+#   5005 ->         cah
+#   5007 ->         dizzy
+#   5008
+#   5006
+#   5007
+#   5008
+#   5009
+
+version: '3'
+services:
+  nginxpm:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: 'nginxpm'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+      - '5002:5001'   # abulmisk
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+
+
