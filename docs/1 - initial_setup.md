@@ -6,7 +6,8 @@ sudo apt update && sudo apt upgrade
 ```
 ### Non-root user creation
 ```bash
-MYUSER=username_here
+read -p "Enter user: " MYUSER
+echo "Adding ${MYUSER}..."
 adduser ${MYUSER}
 usermod -aG sudo ${MYUSER}
 ```
@@ -36,3 +37,44 @@ Some general packages to add:
 ```bash
 sudo apt install python3.10-venv
 ```
+
+Poetry
+```bash
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+```
+
+### Terminal mods
+Purely optional, but may help with adminning
+#### Install zsh
+```bash
+sudo apt install zsh
+# Check version
+zsh --version
+
+# Set as default shell, then log out & back in
+chsh -s /usr/bin/zsh
+```
+After logging back in,
+```bash
+# Confirm zsh is the new default
+echo $SHELL
+# >>> /usr/bin/zsh
+```
+#### Install oh-my-zsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+#### Install powerline fonts
+```bash
+sudo apt install fonts-powerline
+```
+#### Install powerlevel10k
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# Then edit in ~/.zshrc
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# Log out, log back in
+```
+
+#### Shell completion?

@@ -51,8 +51,8 @@ sudo systemctl restart fail2ban
 ### Later Stage Options
 #### Influxdb logging
 
-#### Add invalid webpage blocking
-Next we'll add in a filter for repeat invalid page requests. This will use nginx's access.log
+#### Add invalid webpage blocking [nginx]
+
 
 First, make a new file to hold the regex patterns and other settings
 ```bash
